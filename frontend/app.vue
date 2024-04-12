@@ -1,11 +1,22 @@
-<!-- <template>
-  <div>
-    <NuxtWelcome />
-  </div>
-</template> -->
-
 <template>
-  <q-btn color="primary" label="Primary" />
-  <QBtn color="secondary" label="Secondary" />
-  <LazyQBtn color="amber" glossy label="Amber" />
+  <div>
+    <NuxtPage />
+  </div>
 </template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+  setup () {
+    const leftDrawerOpen = ref(false)
+
+    return {
+      leftDrawerOpen,
+      toggleLeftDrawer () {
+        leftDrawerOpen.value = !leftDrawerOpen.value
+      }
+    }
+  }
+}
+</script>
