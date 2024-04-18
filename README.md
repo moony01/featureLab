@@ -34,6 +34,10 @@
 - .idea: IntelliJ IDEA 개발 환경 설정 파일이 있는 디렉터리
 - build.gradle: 프로젝트의 빌드를 위한 Gradle 스크립트 파일
 - build: 프로젝트 빌드 결과물이 저장되는 디렉터리
+- out: IntelliJ IDEA와 같은 JetBrains의 개발 환경에서 사용되는 빌드 및 컴파일 결과물 보통 개발 환경 내에서의 빌드와 테스트를 위한 임시 저장소로 사용됨.
+- gradlew: 이 스크립트는 Unix 또는 Linux 시스템에서 사용됨 주 역할은 gradle을 사용하여 프로젝트를 빌드하는 데 필요한 환경을 제공하고 Gradle 버전이 자동으로 다운로드가 되어서 개발자가 별도로 Gradle을 설치를 할 필요가 없게됨
+- gradlew.bat: 이녀석은 gradlew과 똑같은 역할을 하지만 다른점은 Windows 환경에서 사용된다는 점이다.
+- settings.gradle: 이 파일은 Gradle 프로젝트 설정을 포함하고 여러 프로젝트가 함께 있는 멀티 모듈 구성의 경우 이 파일에서 각 모듈을 어떻게 연결할지 정의할 수 있음 그리고 Gradle 빌드 시스템에서 프로젝트 이름 설정, 포함할 하위 프로젝트 지정 등의 작업을 여기서 처리함
 
 ### build 디렉터리와 build.gradle 파일에대한 조금 더 자세한 설명
 
