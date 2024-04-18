@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && xcopy /E /I /Y .output\\public\\* ..\\src\\main\\resources\\static\\",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

@@ -9,6 +9,9 @@ import type { NuxtConfig } from "@nuxt/types";
 const config: NuxtConfig = {
   // devtools: { enabled: true }
 
+  generate: {
+    dir: '../src/main/resources/static'
+  },
   modules: ["nuxt-quasar-ui"],
 
   quasar: {
