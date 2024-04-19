@@ -12,19 +12,20 @@ const config: NuxtConfig = {
   generate: {
     dir: '../src/main/resources/static'
   },
+
   modules: ["nuxt-quasar-ui"],
 
   quasar: {
     plugins: [],
   },
 
-  nitro: {
-    routeRules: {
-      "/min/api/**": {
-        proxy: "http://localhost:8080/min/api/**",
-      },
-    },
-  },
+//   nitro: {
+//     routeRules: {
+//       "/min/api/**": {
+//         proxy: "http://localhost:8080/min/api/**",
+//       },
+//     },
+//   },
 };
 
 export default config;
