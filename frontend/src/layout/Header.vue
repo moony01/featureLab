@@ -10,13 +10,11 @@
         Title
       </q-toolbar-title>
 
-      <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
     </q-toolbar>
 
     <q-tabs align="left">
-      <q-route-tab to="/about" label="Page One" />
+      <q-route-tab to="/moony" label="한문희" />
       <q-route-tab to="/page2" label="Page Two" />
-      <q-route-tab to="/page3" label="Page Three" />
     </q-tabs>
   </q-header>
 </template>

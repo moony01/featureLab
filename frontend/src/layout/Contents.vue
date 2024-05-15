@@ -3,10 +3,6 @@
     <!-- drawer content -->
   </q-drawer>
 
-  <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-    <!-- drawer content -->
-  </q-drawer>
-
   <q-page-container>
     <router-view />
   </q-page-container>

@@ -1,21 +1,21 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <MainHeader />
-    <MainBody />
-    <MainFooter />
+    <Header />
+    <Contents />
+    <Footer />
   </q-layout>
 </template>
 
 <script>
-import MainHeader from './components/MainHeader.vue'
-import MainBody from './components/MainBody.vue'
-import MainFooter from './components/MainFooter.vue'
+import Header from './layout/Header.vue'
+import Contents from './layout/Contents.vue'
+import Footer from './layout/Footer.vue'
 export default {
   name: 'App',
   components: {
-    MainHeader,
-    MainBody,
-    MainFooter,
+    Header,
+    Contents,
+    Footer,
   },
 }
 </script>

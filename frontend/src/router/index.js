@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import About from '../views/about.vue'
+import Moony from '../views/moony'
 
 const routes = [
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: "/moony",
+    name: "Moony",
+    component: Moony,
   },
 ];
 

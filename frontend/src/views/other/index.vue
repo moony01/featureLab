@@ -3,7 +3,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'other'
+};
 </script>
 
 <style lang="scss" scoped>
