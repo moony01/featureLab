@@ -1,11 +1,15 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem" class="shadow">
+      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.item" class="shadow">
         <i class="checkBtn fas fa-check"
-           v-on:click="toggleComplete">
+           v-bind:class="{checkBtnCompleted: todoItem.completed}"
+           v-on:click="toggleComplete(todoItem, index)">
         </i>
-        {{ todoItem.item }}
+        
+        <!-- v-bind:class는 todoItem.completed가 true면 textComplted class가 생기고 false면 안생김 -->
+        <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
+        
         <!-- v-for의 todoItem과 index를 아래 removeTodo함수의 파라미터로 넘길 수 있음 -->
         <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
           <i class="fas fa-trash-alt"></i>
@@ -28,8 +32,10 @@ export default {
       localStorage.removeItem(todoItem);
       this.todoItems.splice(index, 1);
     },
-    toggleComplete: function() {
-      
+    toggleComplete: function(todoItem) {
+      todoItem.completed = !todoItem.completed;
+      localStorage.removeItem(todoItem.item);
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem)); //key:value값으로 들어감
     }
   },
   // 생성되는 시점에 실행되는 라이프 사이클 훅
