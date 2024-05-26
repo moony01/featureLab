@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.item" class="shadow">
+      <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item" class="shadow">
         <i class="checkBtn fas fa-check"
            v-bind:class="{checkBtnCompleted: todoItem.completed}"
            v-on:click="toggleComplete(todoItem, index)">
@@ -21,11 +21,7 @@
   
 <script>
 export default {
-  data: function () {
-    return {
-      todoItems: [],
-    }
-  },
+  props: ['propsdata'],
   methods: {
     removeTodo: function (todoItem, index) {
       console.log(todoItem, index);
@@ -36,18 +32,6 @@ export default {
       todoItem.completed = !todoItem.completed;
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem)); //key:value값으로 들어감
-    }
-  },
-  // 생성되는 시점에 실행되는 라이프 사이클 훅
-  created: function () {
-    if (localStorage.length > 0) {
-      for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) !== "loglevel:webpack-dev-server") {
-          this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-          // console.log(localStorage.getItem(localStorage.key(i)));
-          // this.todoItems.push(localStorage.key(i));
-        }
-      }
     }
   },
 };
